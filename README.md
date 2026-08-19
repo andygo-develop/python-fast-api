@@ -185,6 +185,55 @@ Specifications live in `openspec/specs/`, and completed change proposals — wit
 rationale — are in `openspec/changes/archive/`. `openspec/specs/user-auth/spec.md` is the standing
 description of the authentication behaviour described above.
 
+## Tooling
+
+Two CLIs support this repo's Claude Code workflow. Both are global npm packages, not project
+dependencies — `uv sync` does not install them.
+
+### fastapi-harness
+
+```bash
+npm install -g @andygo.dev/fastapi-harness
+```
+
+Pins FastAPI documentation to this project's exact version (0.141.1) and serves it to Claude Code
+over MCP, so framework lookups reflect this checkout instead of possibly-stale training data. Already
+set up in this repo:
+
+- `.fastapi-harness/config.json` — pins the FastAPI version and enables `specs` (indexes
+  `openspec/specs/**/*.md` as a second, separate corpus — project specs, not framework docs)
+- `.fastapi-harness/manuals/` — the synced manuals and their BM25 SQLite index
+- `.mcp.json` — registers the `fastapi-docs` MCP server, started via
+  `npx @andygo.dev/fastapi-harness mcp start`
+- `.claude/settings.local.json` — has `fastapi-docs` in `enabledMcpjsonServers`, so Claude Code
+  connects automatically without a per-session prompt
+
+Cloning this repo fresh only requires the global install above — the harness's own project files are
+already committed. Useful commands from here:
+
+```bash
+fastapi-harness doctor            # check the harness setup and that MCP tools work
+fastapi-harness manuals update    # resync manuals if the MCP server reports they're stale
+fastapi-harness setup             # detect, configure, install agent files, sync and index — for a new project
+```
+
+### openspec
+
+```bash
+npm install -g @fission-ai/openspec
+```
+
+Drives the spec-driven planning workflow in `openspec/` — proposals, spec deltas, and design docs are
+written as artifacts and reviewed before code changes. This repo uses `openspec/config.yaml` with
+`schema: spec-driven` and no custom project context or rules filled in yet. Slash commands
+(`/opsx:propose`, `/opsx:new`, `/opsx:continue`, `/opsx:verify`, `/opsx:archive`) and the `openspec-*`
+skills call the CLI under the hood; `/opsx:propose` and `/opsx:new` are planning-only and never edit
+code themselves. A new project bootstraps its `openspec/` directory with:
+
+```bash
+openspec init
+```
+
 ## Not implemented
 
 Deliberately out of scope so far, each a candidate for its own change: user registration over the
