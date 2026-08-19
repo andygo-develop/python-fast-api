@@ -1,0 +1,11 @@
+{
+  "framework": "fastapi",
+  "version": "0.141.1",
+  "docsLine": "0.141.1",
+  "lang": "en",
+  "source": "https://github.com/fastapi/fastapi/tree/0.141.1/docs/en/docs",
+  "tag": "0.141.1",
+  "commit": "95f8322ee1dcda7ceace7b1c4f6c9915b36d748f",
+  "syncedAt": "2026-08-19T09:51:26.504Z",
+  "fileCount": 155
+}
