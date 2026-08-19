@@ -1,0 +1,14 @@
+{
+  "templateSet": "skill:fastapi",
+  "installedAt": "2026-08-19T09:51:19.173Z",
+  "files": {
+    "references/architecture.md": "712975a473f1ae5f7ceb2f36171ecebbd3c23753",
+    "references/conventions.md": "3ff24c15dfd3c2c3bc2622edbb28b971a89afba7",
+    "references/middleware.md": "7b8d1e8150b09262d240c39263f1cafd8c1dea79",
+    "references/orm.md": "c1569a31abd2ceef24f4b315fd6a1af1f1ac3c9d",
+    "references/routers.md": "edeeecb9b49ba27657ad60c38b085150379469be",
+    "references/security.md": "f1ce99c357375b19d04b0bed3b1ab7e19988f852",
+    "references/testing.md": "b0d89c4f891e14e2370c257cb7ff37b29cad4f74",
+    "SKILL.md": "c93bcc17116f2172875d990d26dbcaa41436281b"
+  }
+}

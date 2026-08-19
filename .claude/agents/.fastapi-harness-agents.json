@@ -1,0 +1,10 @@
+{
+  "templateSet": "agent",
+  "installedAt": "2026-08-19T09:51:19.176Z",
+  "files": {
+    "fastapi-code-reviewer.md": "d5355eff1050fac72d299a402c9dbeb3fdbc8f7e",
+    "fastapi-expert.md": "86f21674c42a93f396fea261f00bbca8f99e0fc1",
+    "fastapi-planner.md": "b5cced6d6d690c3161bdc17b3dfe977d58be2c05",
+    "fastapi-test-writer.md": "37a4b2e4b9f7f3e5390e5ef0f0bc2b4019549912"
+  }
+}

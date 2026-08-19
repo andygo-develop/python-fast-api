@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "fastapi-docs": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@andygo.dev/fastapi-harness",
+        "mcp",
+        "start"
+      ]
+    }
+  }
+}

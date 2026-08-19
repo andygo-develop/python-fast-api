@@ -1,0 +1,33 @@
+{
+  "configVersion": 1,
+  "fastapi": {
+    "version": "0.141.1",
+    "exactVersion": "0.141.1",
+    "line": "0.141",
+    "docsLine": "0.141.1"
+  },
+  "manuals": {
+    "source": "official",
+    "language": "en",
+    "repository": "fastapi/fastapi"
+  },
+  "index": {
+    "engine": "sqlite",
+    "searchStrategy": "bm25",
+    "embeddingModel": "Xenova/all-MiniLM-L6-v2"
+  },
+  "mcp": {
+    "transport": "stdio",
+    "serverName": "fastapi-docs"
+  },
+  "targets": [
+    "claude-code"
+  ],
+  "specs": {
+    "enabled": true,
+    "include": [
+      "openspec/specs/**/*.md"
+    ],
+    "exclude": []
+  }
+}
